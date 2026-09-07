@@ -29,4 +29,49 @@ Added scroll-margin-top on sections so in-page nav clears the sticky header.
 Verified locally at http://127.0.0.1:4173/: hero, About/Experience/Work/Contact
 anchors, LinkedIn/GitHub hrefs, and styles.css loading.
 
-Pushing this static site to origin/main so GitHub Pages can deploy it.
+Pushed dc2f003 to origin/main as amoghd3 after adding the workflow OAuth scope.
+Site URL: https://amoghd3.github.io/portfolio/
+
+Redesign — 2026-09-07 (later)
+
+Rebuilt the static site around a “signal room” look: midnight + teal + copper,
+blueprint grid, Bricolage Grotesque / Figtree / IBM Plex Mono. Hero now uses
+the higher-quality headshot (158KB vs 17KB), cropped tighter to the face and
+saved as assets/amogh.png. Impact section leads with accomplishments (4x time
+studies, ~$300k save, 200+ demos, 83% reporting cut, hackathon 1st, COO summit).
+
+New Systems section with two interactive process diagrams:
+1. Voice assistant harness — STT, transcribe, memory, conversation/turn IDs,
+   background actions, response, TTS, continue, plus an orchestration rail.
+2. AI governance and execution engine — intake, policy, risk gate, plan,
+   sandboxed execute, human loop, audit, outcome / kill switch.
+
+Diagram nodes highlight matching explanations on hover; steps auto-cycle.
+app.js handles reveal-on-scroll and diagram state. pages.yml now copies
+app.js and assets/ into _site so GitHub Pages serves the photo and scripts.
+
+Resume correction pass — 2026-09-07
+
+Updated copy from Amogh’s resume photos (not published on the site; no phone
+or Wells Fargo email). Title is now AI Product Strategist, Charlotte. Stats use
+resume metrics: 380k hours (patent-pending prompt system), $27–45M ORBIT,
+4x/$300K time study, 90% Ducky AI, 83% demo validation, 100+ analysts.
+Experience list now includes both Wells Fargo roles, Duck Creek, MUSE,
+Venture Studio, UI7, Estagrow, and OKB Hub. Education and certs added.
+Work cards cover Prompt Studio, ORBIT, Ducky AI, time study/CDSC, research
+awards, and Venture Studio/UI7.
+
+Interview redesign — 2026-09-07
+
+Replaced the dark “signal room” theme with a light, single-accent layout for
+applications: paper background, navy accent, Inter + Newsreader. Structure
+follows a 30-second portfolio: hero (name, role, one differentiator, CTA to
+#work), four projects (Prompt Studio featured + ORBIT, Ducky AI, time study,
+research), a clean Approach section with two diagrams, a 5-item timeline,
+two-paragraph About, Contact. Removed auto-cycling animations, skill logos,
+and resume-dump sections. No phone or work email.
+
+Profile photo sizing — 2026-09-07
+
+Hero portrait is now a 132px circular frame with overflow hidden so the
+headshot stays inside the box. Desktop hero column matches that width.
