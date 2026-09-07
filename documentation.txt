@@ -75,3 +75,92 @@ Profile photo sizing — 2026-09-07
 
 Hero portrait is now a 132px circular frame with overflow hidden so the
 headshot stays inside the box. Desktop hero column matches that width.
+
+Pushed e05c8d8 to origin/main. Pages should redeploy at
+https://amoghd3.github.io/portfolio/
+
+Voice pass — 2026-09-07
+
+Rewrote site copy against the 25 human-writing patterns: direct claims, no
+"not X but Y", no one-line closers, no fake objections, fewer I-stacks,
+straight quotes, sentence-case headings, resume numbers kept as stated.
+Saved the patterns as always-on rules at ~/.cursor/rules/human-writing.mdc
+and .cursor/rules/human-writing.mdc in this repo.
+
+Work by accomplishment — 2026-09-07
+
+Work is now four clickable nodes (Prompt Studio, ORBIT, Ducky AI, time
+study tracker). Clicking a node shows that item only: a three-lane process
+map, a step callout, then How it was built / How it scaled / Key features.
+
+Maps use lane bands, numbered badges, titled nodes, and arrow connectors.
+Clicking a map node highlights the matching step and updates the callout.
+Approach maps (voice harness, governance engine) use the same treatment.
+
+CSS: .acc-map, .acc-node, .work-panel[hidden], .notes 3-col, .step-card,
+.diagram .band / .badge / .ttl. app.js wires tabs and map highlight.
+
+Two built systems — 2026-09-07
+
+Added work nodes 05 and 06. Desktop grid is now 3 columns.
+
+05 Process map editor: requirements + business docs → generated map →
+select / talk / edit → automatic diagram update → SOR connection for
+control alignment. Lanes: Gather, Edit, Align.
+
+06 Document processor: intake of PDFs and sheets → minimized working set
+for semantic reasoning → standard output → HIL review → audit log on
+every intake and creation step → selective RAG for later agent use.
+Lanes: Intake, Generate, Govern.
+
+No metrics invented. Kickers say Built system. Same panel pattern as the
+Wells Fargo / Duck Creek items.
+
+Work as a timeline — 2026-09-07
+
+Work is grouped by when it was built:
+
+2024 Duck Creek: Ducky AI RFx, Excel AI harness (new). The harness is a
+VBA macro that calls an AI API and executes the returned code in the
+sheet. Copy says this was 2024, ahead of Copilot in Excel.
+
+2025 intern: Time study tracker rewritten as track → log → notate →
+store in cells → tabulate selection → visualize. Scale lane still has
+2-to-8, ~$300K, CDSC 5h to 3h.
+
+2025 intern: ORBIT rewritten as architecture. Data (profile, library,
+events), services (adaptive engine, mentor, manager view), ship
+(capstone, POC, rollout case). Notes heading is "How it would be built".
+
+2025 to now: Prompt Studio. Then Systems I built (map editor, document
+processor).
+
+Default selected node is Ducky (first in time). Path copy updated for
+2024 and 2025 intern lines. CSS: .era, .era-label, .era-one.
+
+Two pages — 2026-09-07
+
+index.html is the first page: hero, four high-level results, work cards
+in timeline order, path, about, LinkedIn. Cards link to work.html#id.
+GitHub button removed.
+
+work.html is the breakdown: same project nodes, process maps, notes, and
+the Approach maps. Hash opens the matching panel. Back to home link.
+pages.yml now copies work.html into _site. app.js reads location.hash.
+
+Newest first + senior voice — 2026-09-07
+
+Work on home and work.html now lists newest to oldest:
+01 Prompt Studio (2025 to now)
+02 Process map editor, 03 Document processor (systems I built)
+04 ORBIT, 05 Time study tracker (2025 intern)
+06 Ducky AI, 07 Excel AI harness (2024)
+
+Default work panel is Prompt Studio. app.js falls back to studio when
+there is no hash.
+
+Copy tightened to hiring-manager voice without new metrics: hero states
+production AI systems and the scoping-to-LOB path; cards and panel ledes
+use enterprise / governed / execution language; results lead with 4x
+throughput; path and About name governance and the patent-pending
+workflow. Banned hype words stayed out. Numbers unchanged.

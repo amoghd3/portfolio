@@ -63,7 +63,7 @@ code {
 }
 
 .wrap {
-  width: min(980px, calc(100% - 2.4rem));
+  width: min(1080px, calc(100% - 2.4rem));
   margin: 0 auto;
 }
 
@@ -106,8 +106,57 @@ nav {
   font-size: 0.95rem;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.is-here {
   color: var(--fg);
+}
+
+.page-title {
+  font-family: Newsreader, Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0.2rem 0 0.5rem;
+  max-width: none;
+}
+
+.back {
+  margin: 0.7rem 0 0.2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.back a:hover {
+  color: var(--fg);
+}
+
+.results {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.results li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+}
+
+.results strong {
+  display: block;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.results span {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 section {
@@ -132,10 +181,10 @@ section {
 
 .lede,
 .about p,
-.feature > p,
-.grid p,
 .timeline p,
-.system > .lede {
+.system > .lede,
+.notes p,
+.work-panel > .lede {
   color: var(--muted);
 }
 
@@ -197,34 +246,146 @@ section {
   border-color: var(--fg);
 }
 
-.feature,
-.grid article,
 .system,
+.work-panel,
 .timeline li {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 12px;
 }
 
-.feature {
-  padding: 1.5rem 1.4rem;
+.era {
+  margin: 1.35rem 0 0;
+}
+
+.era:last-of-type {
+  margin-bottom: 1.2rem;
+}
+
+.era-label {
+  margin: 0 0 0.55rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.acc-map {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  margin: 0 0 0.2rem;
+}
+
+.acc-node {
+  appearance: none;
+  display: block;
+  text-align: left;
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1rem 1rem 0.95rem;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  min-height: 118px;
+}
+
+.acc-node:hover {
+  border-color: #c8c0b3;
+}
+
+.acc-node.is-on {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.acc-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  margin-bottom: 0.55rem;
+  border-radius: 50%;
+  background: #d7e0ea;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.acc-node.is-on .acc-num {
+  background: var(--accent);
+  color: #fff;
+}
+
+.acc-node strong {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.acc-node em {
+  display: block;
+  margin-top: 0.2rem;
+  font-style: normal;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.work-panel[hidden] {
+  display: none;
+}
+
+.work-panel {
+  scroll-margin-top: 88px;
+}
+
+.work-panel,
+.system {
+  padding: 1.35rem 1.25rem 1.2rem;
   margin-bottom: 1rem;
 }
 
-.metrics {
-  margin: 1rem 0 0.8rem;
-  padding-left: 1.1rem;
-  color: var(--fg);
-}
-
-.grid {
+.notes {
   display: grid;
   gap: 1rem;
+  margin: 0.4rem 0 1.1rem;
 }
 
-.grid article,
-.system {
-  padding: 1.25rem 1.2rem;
+.notes h4 {
+  margin: 0 0 0.35rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.diagram .lane {
+  fill: var(--muted);
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.diagram .num {
+  fill: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.diagram .ttl {
+  font-size: 13px;
+}
+
+.diagram .sub {
+  fill: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
 }
 
 .result {
@@ -244,26 +405,38 @@ section {
 }
 
 .diagram-shell {
-  margin: 1rem 0;
+  margin: 1rem 0 0.85rem;
   overflow-x: auto;
   border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fbfaf6;
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, #f7f4ed 0%, #fbfaf6 28%);
 }
 
 .diagram {
   display: block;
-  min-width: 900px;
+  min-width: 1040px;
   width: 100%;
+  height: auto;
+}
+
+.diagram .band {
+  fill: #fffdf8;
+  stroke: var(--line);
 }
 
 .diagram .node {
   cursor: pointer;
 }
 
+.diagram .node:hover rect {
+  stroke: var(--accent);
+}
+
 .diagram .node rect {
   fill: #fff;
   stroke: var(--line);
+  stroke-width: 1.25;
 }
 
 .diagram .node text {
@@ -274,9 +447,32 @@ section {
   text-anchor: middle;
 }
 
+.diagram .badge {
+  fill: #d7e0ea;
+}
+
 .diagram .node.is-on rect {
   stroke: var(--accent);
+  stroke-width: 1.85;
   fill: #eef3f8;
+}
+
+.diagram .node.is-on .badge {
+  fill: var(--accent);
+}
+
+.diagram .node.is-on .num {
+  fill: #fff;
+}
+
+.step-card {
+  margin: 0 0 1.1rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: #f3efe6;
+  border-radius: 0 8px 8px 0;
+  color: var(--fg);
+  font-weight: 500;
 }
 
 .flow {
@@ -358,13 +554,29 @@ section {
     gap: 3rem;
   }
 
-  .grid,
-  .timeline li {
+  .results {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .notes {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .steps {
     grid-template-columns: 1fr 1fr;
   }
 
   .timeline li {
     grid-template-columns: 140px 1fr;
     align-items: start;
+  }
+
+  .acc-map {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .era-one .acc-map {
+    grid-template-columns: 1fr;
+    max-width: 50%;
   }
 }
