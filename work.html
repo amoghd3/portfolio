@@ -33,69 +33,19 @@
       <section id="work" class="wrap">
         <p class="kicker">Work</p>
         <h1 class="page-title">System design</h1>
-        <p class="lede">Newest work first. The map, architecture, and notes change with the project.</p>
+        <p class="lede">Click a project to open its map and notes. Only one stays open.</p>
         <p class="back"><a href="index.html">Back to home</a></p>
 
         <div class="era era-one">
           <p class="era-label">2025 to now · COO AI Product</p>
-          <div class="acc-map" role="tablist" aria-label="Current work">
-            <button type="button" role="tab" aria-selected="true" aria-controls="studio" class="acc-node is-on" data-work-tab="studio">
+          <div class="work-stack" role="tablist" aria-label="Current work">
+            <div class="work-item" data-work-item="studio">
+            <button type="button" role="tab" aria-selected="false" aria-expanded="false" aria-controls="studio" class="acc-node" data-work-tab="studio">
               <span class="acc-num">01</span>
               <strong>Prompt Studio</strong>
               <em>Enterprise governance and execution</em>
             </button>
-          </div>
-        </div>
-
-        <div class="era">
-          <p class="era-label">Systems I built</p>
-          <div class="acc-map" role="tablist" aria-label="Built systems">
-            <button type="button" role="tab" aria-selected="false" aria-controls="maps" class="acc-node" data-work-tab="maps">
-              <span class="acc-num">02</span>
-              <strong>Process map editor</strong>
-              <em>Conversational map + SOR controls</em>
-            </button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="docs" class="acc-node" data-work-tab="docs">
-              <span class="acc-num">03</span>
-              <strong>Document processor</strong>
-              <em>HIL generation, audit, selective RAG</em>
-            </button>
-          </div>
-        </div>
-
-        <div class="era">
-          <p class="era-label">2025 intern · Wells Fargo, WIM Ops</p>
-          <div class="acc-map" role="tablist" aria-label="2025 intern work">
-            <button type="button" role="tab" aria-selected="false" aria-controls="orbit" class="acc-node" data-work-tab="orbit">
-              <span class="acc-num">04</span>
-              <strong>ORBIT</strong>
-              <em>Adaptive onboarding system</em>
-            </button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="tracker" class="acc-node" data-work-tab="tracker">
-              <span class="acc-num">05</span>
-              <strong>Time study tracker</strong>
-              <em>Ops instrumentation</em>
-            </button>
-          </div>
-        </div>
-
-        <div class="era">
-          <p class="era-label">2024 · Duck Creek intern</p>
-          <div class="acc-map" role="tablist" aria-label="2024 work">
-            <button type="button" role="tab" aria-selected="false" aria-controls="ducky" class="acc-node" data-work-tab="ducky">
-              <span class="acc-num">06</span>
-              <strong>Ducky AI</strong>
-              <em>Governed RFx generation</em>
-            </button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="excel" class="acc-node" data-work-tab="excel">
-              <span class="acc-num">07</span>
-              <strong>Excel AI harness</strong>
-              <em>In-workbook execution layer</em>
-            </button>
-          </div>
-        </div>
-
-        <article class="work-panel map" id="studio" data-work-panel="studio">
+            <article class="work-panel map" id="studio" data-work-panel="studio" hidden>
           <p class="kicker">2025 to now · Wells Fargo, COO AI Product</p>
           <h3>Prompt Studio</h3>
           <p class="lede">Enterprise prompt operations for Global Operations: governed design, QA, chaining, and execution across lines of business. ~380,000 hours / year by 2027. Patent pending, co-inventor.</p>
@@ -165,8 +115,162 @@
             <li data-step="hours">The hours model is the 2027 projection from that workflow.</li>
           </ol>
         </article>
+          </div>
+          </div>
+        </div>
 
-        <article class="work-panel map" id="orbit" data-work-panel="orbit" hidden>
+        <div class="era">
+          <p class="era-label">Systems I built</p>
+          <div class="work-stack" role="tablist" aria-label="Built systems">
+            <div class="work-item" data-work-item="maps">
+            <button type="button" role="tab" aria-selected="false" aria-controls="maps" class="acc-node" data-work-tab="maps">
+              <span class="acc-num">02</span>
+              <strong>Process map editor</strong>
+              <em>Conversational map + SOR controls</em>
+            </button>
+            <article class="work-panel map" id="maps" data-work-panel="maps" hidden>
+          <p class="kicker">Built system</p>
+          <h3>Process map editor</h3>
+          <p class="lede">A conversational process-map editor. Requirements and source docs become a live graph. Select a node, talk to it or edit it, and the map updates. Then connect a system of record so controls stay aligned with the live process.</p>
+
+          <div class="diagram-shell">
+            <svg class="diagram" viewBox="0 0 1100 508" role="img" aria-labelledby="map-maps">
+              <title id="map-maps">Process map editor</title>
+              <defs>
+                <marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 Z" fill="#1a365d" />
+                </marker>
+              </defs>
+              <rect class="band" x="12" y="24" width="1076" height="148" rx="14" />
+              <text class="lane" x="32" y="52">Gather</text>
+              <g class="node is-on" data-step="reqs"><rect x="36" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="94" r="12" /><text class="num" x="58" y="98">1</text><text class="ttl" x="198" y="98">Requirements</text><text class="sub" x="198" y="122">scope the process</text></g>
+              <g class="node" data-step="bizdocs"><rect x="388" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="94" r="12" /><text class="num" x="410" y="98">2</text><text class="ttl" x="550" y="98">Business docs</text><text class="sub" x="550" y="122">existing write-ups</text></g>
+              <g class="node" data-step="draw"><rect x="740" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="94" r="12" /><text class="num" x="762" y="98">3</text><text class="ttl" x="902" y="98">Generate map</text><text class="sub" x="902" y="122">first diagram</text></g>
+              <path class="flow" marker-end="url(#am)" d="M360 114 H388" />
+              <path class="flow" marker-end="url(#am)" d="M712 114 H740" />
+              <rect class="band" x="12" y="186" width="1076" height="148" rx="14" />
+              <text class="lane" x="32" y="214">Edit</text>
+              <g class="node" data-step="select"><rect x="36" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="256" r="12" /><text class="num" x="58" y="260">4</text><text class="ttl" x="198" y="260">Select</text><text class="sub" x="198" y="284">click a node</text></g>
+              <g class="node" data-step="talk"><rect x="388" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="256" r="12" /><text class="num" x="410" y="260">5</text><text class="ttl" x="550" y="260">Talk or edit</text><text class="sub" x="550" y="284">change the step</text></g>
+              <g class="node" data-step="apply"><rect x="740" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="256" r="12" /><text class="num" x="762" y="260">6</text><text class="ttl" x="902" y="260">Apply</text><text class="sub" x="902" y="284">map updates itself</text></g>
+              <path class="flow" marker-end="url(#am)" d="M360 276 H388" />
+              <path class="flow" marker-end="url(#am)" d="M712 276 H740" />
+              <rect class="band" x="12" y="348" width="1076" height="148" rx="14" />
+              <text class="lane" x="32" y="376">Align</text>
+              <g class="node" data-step="sor"><rect x="36" y="396" width="500" height="84" rx="12" /><circle class="badge" cx="58" cy="418" r="12" /><text class="num" x="58" y="422">7</text><text class="ttl" x="286" y="422">Connect SOR</text><text class="sub" x="286" y="446">external system of record</text></g>
+              <g class="node" data-step="controls"><rect x="564" y="396" width="500" height="84" rx="12" /><circle class="badge" cx="586" cy="418" r="12" /><text class="num" x="586" y="422">8</text><text class="ttl" x="814" y="422">Align controls</text><text class="sub" x="814" y="446">map matches the live process</text></g>
+              <path class="flow" marker-end="url(#am)" d="M536 438 H564" />
+            </svg>
+          </div>
+          <p class="step-card">Collect the requirements that name the process.</p>
+
+          <div class="notes">
+            <div>
+              <h4>How it was built</h4>
+              <p>Requirements and existing business docs generate the first process map. You select a node, edit it, or describe the change in language. The diagram updates from that input.</p>
+            </div>
+            <div>
+              <h4>How it scaled</h4>
+              <p>The same map can connect to an external system of record so controls stay aligned with the live process.</p>
+            </div>
+            <div>
+              <h4>Key features</h4>
+              <p>Document intake, conversational node edit, automatic graph updates, and system-of-record control alignment.</p>
+            </div>
+          </div>
+          <ol class="steps">
+            <li data-step="reqs" class="is-on">Collect the requirements that name the process.</li>
+            <li data-step="bizdocs">Pull in the write-ups the team already has.</li>
+            <li data-step="draw">Generate the first process map from that set.</li>
+            <li data-step="select">Click a node on the map.</li>
+            <li data-step="talk">Edit the step or describe the change in language.</li>
+            <li data-step="apply">The diagram updates from that change.</li>
+            <li data-step="sor">Connect an external system of record.</li>
+            <li data-step="controls">Align the map controls with the live process.</li>
+          </ol>
+        </article>
+          </div>
+            <div class="work-item" data-work-item="docs">
+            <button type="button" role="tab" aria-selected="false" aria-controls="docs" class="acc-node" data-work-tab="docs">
+              <span class="acc-num">03</span>
+              <strong>Document processor</strong>
+              <em>HIL generation, audit, selective RAG</em>
+            </button>
+            <article class="work-panel map" id="docs" data-work-panel="docs" hidden>
+          <p class="kicker">Built system</p>
+          <h3>Document processor</h3>
+          <p class="lede">Large-document intake reduced to a minimized reasoning set. That set drives a standard output document, human-in-the-loop review, a full-step audit log, and selective RAG for later agent work.</p>
+
+          <div class="diagram-shell">
+            <svg class="diagram" viewBox="0 0 1100 508" role="img" aria-labelledby="map-docs">
+              <title id="map-docs">Document processor</title>
+              <defs>
+                <marker id="adoc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 Z" fill="#1a365d" />
+                </marker>
+              </defs>
+              <rect class="band" x="12" y="24" width="1076" height="148" rx="14" />
+              <text class="lane" x="32" y="52">Intake</text>
+              <g class="node is-on" data-step="collect"><rect x="36" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="94" r="12" /><text class="num" x="58" y="98">1</text><text class="ttl" x="198" y="98">Collect</text><text class="sub" x="198" y="122">PDFs, sheets, files</text></g>
+              <g class="node" data-step="minimize"><rect x="388" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="94" r="12" /><text class="num" x="410" y="98">2</text><text class="ttl" x="550" y="98">Minimize</text><text class="sub" x="550" y="122">working set for reasoning</text></g>
+              <g class="node" data-step="semantic"><rect x="740" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="94" r="12" /><text class="num" x="762" y="98">3</text><text class="ttl" x="902" y="98">Semantic store</text><text class="sub" x="902" y="122">reason over the set</text></g>
+              <path class="flow" marker-end="url(#adoc)" d="M360 114 H388" />
+              <path class="flow" marker-end="url(#adoc)" d="M712 114 H740" />
+              <rect class="band" x="12" y="186" width="1076" height="148" rx="14" />
+              <text class="lane" x="32" y="214">Generate</text>
+              <g class="node" data-step="reason"><rect x="36" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="256" r="12" /><text class="num" x="58" y="260">4</text><text class="ttl" x="198" y="260">Reason</text><text class="sub" x="198" y="284">over the reduced set</text></g>
+              <g class="node" data-step="output"><rect x="388" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="256" r="12" /><text class="num" x="410" y="260">5</text><text class="ttl" x="550" y="260">Standard output</text><text class="sub" x="550" y="284">generated document</text></g>
+              <g class="node" data-step="hil"><rect x="740" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="256" r="12" /><text class="num" x="762" y="260">6</text><text class="ttl" x="902" y="260">HIL review</text><text class="sub" x="902" y="284">approve before ship</text></g>
+              <path class="flow" marker-end="url(#adoc)" d="M360 276 H388" />
+              <path class="flow" marker-end="url(#adoc)" d="M712 276 H740" />
+              <rect class="band" x="12" y="348" width="1076" height="148" rx="14" />
+              <text class="lane" x="32" y="376">Govern</text>
+              <g class="node" data-step="audit"><rect x="36" y="396" width="500" height="84" rx="12" /><circle class="badge" cx="58" cy="418" r="12" /><text class="num" x="58" y="422">7</text><text class="ttl" x="286" y="422">Audit log</text><text class="sub" x="286" y="446">intake and creation, every step</text></g>
+              <g class="node" data-step="rag"><rect x="564" y="396" width="500" height="84" rx="12" /><circle class="badge" cx="586" cy="418" r="12" /><text class="num" x="586" y="422">8</text><text class="ttl" x="814" y="422">Selective RAG</text><text class="sub" x="814" y="446">agent handoff</text></g>
+              <path class="flow" marker-end="url(#adoc)" d="M536 438 H564" />
+            </svg>
+          </div>
+          <p class="step-card">Bring in the PDFs, spreadsheets, and other source files.</p>
+
+          <div class="notes">
+            <div>
+              <h4>How it was built</h4>
+              <p>Intake reduces large PDFs and spreadsheets to a smaller working set so the model can reason over them. That set drives a standard output document. A person reviews it before it ships.</p>
+            </div>
+            <div>
+              <h4>How it scaled</h4>
+              <p>Every intake and generation step writes an audit log. The same store can be used as selective RAG when an agent needs the data later.</p>
+            </div>
+            <div>
+              <h4>Key features</h4>
+              <p>Document intake, minimized reasoning set, standard generation, human approval, full-step audit, and selective RAG handoff.</p>
+            </div>
+          </div>
+          <ol class="steps">
+            <li data-step="collect" class="is-on">Bring in the PDFs, spreadsheets, and other source files.</li>
+            <li data-step="minimize">Cut them down to a working set the model can reason over.</li>
+            <li data-step="semantic">Store that set so later steps use the same facts.</li>
+            <li data-step="reason">Reason over the reduced set.</li>
+            <li data-step="output">Generate a standard output document.</li>
+            <li data-step="hil">A person reviews and approves before it ships.</li>
+            <li data-step="audit">Log intake and creation at every step.</li>
+            <li data-step="rag">Use the store as selective RAG when an agent needs the data.</li>
+          </ol>
+        </article>
+          </div>
+          </div>
+        </div>
+
+        <div class="era">
+          <p class="era-label">2025 intern · Wells Fargo, WIM Ops</p>
+          <div class="work-stack" role="tablist" aria-label="2025 intern work">
+            <div class="work-item" data-work-item="orbit">
+            <button type="button" role="tab" aria-selected="false" aria-controls="orbit" class="acc-node" data-work-tab="orbit">
+              <span class="acc-num">04</span>
+              <strong>ORBIT</strong>
+              <em>Adaptive onboarding system</em>
+            </button>
+            <article class="work-panel map" id="orbit" data-work-panel="orbit" hidden>
           <p class="kicker">2025 · Wells Fargo intern, WIM Ops</p>
           <h3>ORBIT</h3>
           <p class="lede">A state-aware onboarding system. Learner profile, content library, progress events, adaptive engine, in-flow mentor, and a manager progress view. $27M to $45M if fully rolled out at 3 to 5 percent ROI.</p>
@@ -230,132 +334,14 @@
             <li data-step="rollout">Full rollout is the $27M to $45M case at 3 to 5 percent ROI.</li>
           </ol>
         </article>
-
-        <article class="work-panel map" id="ducky" data-work-panel="ducky" hidden>
-          <p class="kicker">2024 · Duck Creek intern</p>
-          <h3>Ducky AI</h3>
-          <p class="lede">GenAI RFx generation over a governed corpus. Natural-language query, first-pass draft, then human edit before anything leaves. 90% faster creation.</p>
-
-          <div class="diagram-shell">
-            <svg class="diagram" viewBox="0 0 1100 508" role="img" aria-labelledby="map-ducky">
-              <title id="map-ducky">Ducky AI process map</title>
-              <defs>
-                <marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-                  <path d="M0 0 L10 5 L0 10 Z" fill="#1a365d" />
-                </marker>
-              </defs>
-              <rect class="band" x="12" y="24" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="52">Build</text>
-              <g class="node is-on" data-step="corpus"><rect x="36" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="94" r="12" /><text class="num" x="58" y="98">1</text><text class="ttl" x="198" y="98">Corpus</text><text class="sub" x="198" y="122">RFx data</text></g>
-              <g class="node" data-step="ask"><rect x="388" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="94" r="12" /><text class="num" x="410" y="98">2</text><text class="ttl" x="550" y="98">Ask</text><text class="sub" x="550" y="122">plain language</text></g>
-              <g class="node" data-step="draft"><rect x="740" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="94" r="12" /><text class="num" x="762" y="98">3</text><text class="ttl" x="902" y="98">Draft</text><text class="sub" x="902" y="122">GenAI material</text></g>
-              <path class="flow" marker-end="url(#ad)" d="M360 114 H388" />
-              <path class="flow" marker-end="url(#ad)" d="M712 114 H740" />
-              <rect class="band" x="12" y="186" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="214">Review</text>
-              <g class="node" data-step="edit"><rect x="36" y="234" width="500" height="84" rx="12" /><circle class="badge" cx="58" cy="256" r="12" /><text class="num" x="58" y="260">4</text><text class="ttl" x="286" y="260">Edit</text><text class="sub" x="286" y="284">human review</text></g>
-              <g class="node" data-step="send"><rect x="564" y="234" width="500" height="84" rx="12" /><circle class="badge" cx="586" cy="256" r="12" /><text class="num" x="586" y="260">5</text><text class="ttl" x="814" y="260">Send</text><text class="sub" x="814" y="284">response package</text></g>
-              <path class="flow" marker-end="url(#ad)" d="M536 276 H564" />
-              <rect class="band" x="12" y="348" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="376">Scale</text>
-              <g class="node" data-step="cut"><rect x="36" y="396" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="418" r="12" /><text class="num" x="58" y="422">6</text><text class="ttl" x="198" y="422">90% faster drafts</text><text class="sub" x="198" y="446">RFx creation time</text></g>
-              <g class="node" data-step="dash"><rect x="388" y="396" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="418" r="12" /><text class="num" x="410" y="422">7</text><text class="ttl" x="550" y="422">Live dashboard</text><text class="sub" x="550" y="446">discovery metrics</text></g>
-              <g class="node" data-step="sf"><rect x="740" y="396" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="418" r="12" /><text class="num" x="762" y="422">8</text><text class="ttl" x="902" y="422">Salesforce reports</text><text class="sub" x="902" y="446">83% less time, 200+ demos</text></g>
-              <path class="flow" marker-end="url(#ad)" d="M360 438 H388" />
-              <path class="flow" marker-end="url(#ad)" d="M712 438 H740" />
-            </svg>
           </div>
-          <p class="step-card">Load the RFx set the team already has.</p>
-
-          <div class="notes">
-            <div>
-              <h4>How it was built</h4>
-              <p>I put the team's RFx corpus behind a natural-language query, generated a first-pass draft, then required a human edit before the package left.</p>
-            </div>
-            <div>
-              <h4>How it scaled</h4>
-              <p>Draft time dropped 90 percent. The same internship also shipped a discovery dashboard and Salesforce reporting used on more than 200 demos a month, cutting validation time 83 percent.</p>
-            </div>
-            <div>
-              <h4>Key features</h4>
-              <p>Governed corpus query, draft generation, human review gate, live discovery metrics, and Salesforce-backed validation.</p>
-            </div>
-          </div>
-          <ol class="steps">
-            <li data-step="corpus" class="is-on">Load the RFx set the team already has.</li>
-            <li data-step="ask">Ask for a section in ordinary language.</li>
-            <li data-step="draft">The model writes the first pass.</li>
-            <li data-step="edit">A person edits before it leaves the building.</li>
-            <li data-step="send">The package goes out as a normal RFx response.</li>
-            <li data-step="cut">Creation time dropped 90 percent.</li>
-            <li data-step="dash">A live dashboard showed discovery impact.</li>
-            <li data-step="sf">Salesforce reporting cut validation time 83 percent.</li>
-          </ol>
-        </article>
-
-        <article class="work-panel map" id="excel" data-work-panel="excel" hidden>
-          <p class="kicker">2024 · Duck Creek intern</p>
-          <h3>Excel AI harness</h3>
-          <p class="lede">An in-workbook AI execution layer. VBA sends sheet context to a model, then runs the returned code in Excel. I built this in 2024, ahead of Copilot in Excel.</p>
-
-          <div class="diagram-shell">
-            <svg class="diagram" viewBox="0 0 1100 508" role="img" aria-labelledby="map-excel">
-              <title id="map-excel">Excel AI harness</title>
-              <defs>
-                <marker id="ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-                  <path d="M0 0 L10 5 L0 10 Z" fill="#1a365d" />
-                </marker>
-              </defs>
-              <rect class="band" x="12" y="24" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="52">Ask</text>
-              <g class="node is-on" data-step="ctx"><rect x="36" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="94" r="12" /><text class="num" x="58" y="98">1</text><text class="ttl" x="198" y="98">Sheet context</text><text class="sub" x="198" y="122">range + workbook</text></g>
-              <g class="node" data-step="prompt"><rect x="388" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="94" r="12" /><text class="num" x="410" y="98">2</text><text class="ttl" x="550" y="98">Prompt</text><text class="sub" x="550" y="122">what to do in Excel</text></g>
-              <g class="node" data-step="api"><rect x="740" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="94" r="12" /><text class="num" x="762" y="98">3</text><text class="ttl" x="902" y="98">AI API</text><text class="sub" x="902" y="122">VBA HTTP call</text></g>
-              <path class="flow" marker-end="url(#ax)" d="M360 114 H388" />
-              <path class="flow" marker-end="url(#ax)" d="M712 114 H740" />
-              <rect class="band" x="12" y="186" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="214">Execute</text>
-              <g class="node" data-step="code"><rect x="36" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="256" r="12" /><text class="num" x="58" y="260">4</text><text class="ttl" x="198" y="260">Returned code</text><text class="sub" x="198" y="284">commands from the model</text></g>
-              <g class="node" data-step="runvba"><rect x="388" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="256" r="12" /><text class="num" x="410" y="260">5</text><text class="ttl" x="550" y="260">Run in VBA</text><text class="sub" x="550" y="284">execute in the sheet</text></g>
-              <g class="node" data-step="write"><rect x="740" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="256" r="12" /><text class="num" x="762" y="260">6</text><text class="ttl" x="902" y="260">Write cells</text><text class="sub" x="902" y="284">result in the workbook</text></g>
-              <path class="flow" marker-end="url(#ax)" d="M360 276 H388" />
-              <path class="flow" marker-end="url(#ax)" d="M712 276 H740" />
-              <rect class="band" x="12" y="348" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="376">Use</text>
-              <g class="node" data-step="cmd"><rect x="36" y="396" width="500" height="84" rx="12" /><circle class="badge" cx="58" cy="418" r="12" /><text class="num" x="58" y="422">7</text><text class="ttl" x="286" y="422">In-sheet commands</text><text class="sub" x="286" y="446">ask, then the sheet changes</text></g>
-              <g class="node" data-step="harness"><rect x="564" y="396" width="500" height="84" rx="12" /><circle class="badge" cx="586" cy="418" r="12" /><text class="num" x="586" y="422">8</text><text class="ttl" x="814" y="422">Excel harness</text><text class="sub" x="814" y="446">2024, before Copilot in Excel</text></g>
-              <path class="flow" marker-end="url(#ax)" d="M536 438 H564" />
-            </svg>
-          </div>
-          <p class="step-card">Read the active range and workbook context.</p>
-
-          <div class="notes">
-            <div>
-              <h4>How it was built</h4>
-              <p>A VBA macro sends range and workbook context to an AI API. The model returns commands as code. The macro executes those commands in Excel and writes the result back to the sheet.</p>
-            </div>
-            <div>
-              <h4>How it scaled</h4>
-              <p>The same execution layer can fill, format, or calculate from a prompt without leaving the workbook.</p>
-            </div>
-            <div>
-              <h4>Key features</h4>
-              <p>Sheet-context capture, VBA-to-API call, in-sheet code execution, and iterative commands from the workbook.</p>
-            </div>
-          </div>
-          <ol class="steps">
-            <li data-step="ctx" class="is-on">Read the active range and workbook context.</li>
-            <li data-step="prompt">Say what should happen in the sheet.</li>
-            <li data-step="api">The VBA macro calls the AI API.</li>
-            <li data-step="code">The model returns commands as code.</li>
-            <li data-step="runvba">VBA executes those commands in Excel.</li>
-            <li data-step="write">The result lands in the workbook cells.</li>
-            <li data-step="cmd">You stay in the sheet and keep asking.</li>
-            <li data-step="harness">This was an Excel harness I built in 2024, ahead of Copilot in Excel.</li>
-          </ol>
-        </article>
-
-        <article class="work-panel map" id="tracker" data-work-panel="tracker" hidden>
+            <div class="work-item" data-work-item="tracker">
+            <button type="button" role="tab" aria-selected="false" aria-controls="tracker" class="acc-node" data-work-tab="tracker">
+              <span class="acc-num">05</span>
+              <strong>Time study tracker</strong>
+              <em>Ops instrumentation</em>
+            </button>
+            <article class="work-panel map" id="tracker" data-work-panel="tracker" hidden>
           <p class="kicker">2025 · Wells Fargo intern, WIM Ops</p>
           <h3>Time study tracker</h3>
           <p class="lede">Ops instrumentation in VBA: track, log, and notate a running study, write fields to cells, then tabulate and chart the selection. Throughput went from 2 studies a week to 8. ~$300K soft save. I also automated CDSC worksheets from 5 hours to 3.</p>
@@ -419,130 +405,93 @@
             <li data-step="cdsc-hours">CDSC prep dropped from five hours to three.</li>
           </ol>
         </article>
+          </div>
+          </div>
+        </div>
 
-        <article class="work-panel map" id="maps" data-work-panel="maps" hidden>
-          <p class="kicker">Built system</p>
-          <h3>Process map editor</h3>
-          <p class="lede">A conversational process-map editor. Requirements and source docs become a live graph. Select a node, talk to it or edit it, and the map updates. Then connect a system of record so controls stay aligned with the live process.</p>
+        <div class="era era-one">
+          <p class="era-label">2024 · Duck Creek intern</p>
+          <div class="work-stack" role="tablist" aria-label="2024 work">
+            <div class="work-item" data-work-item="ducky">
+            <button type="button" role="tab" aria-selected="false" aria-expanded="false" aria-controls="ducky" class="acc-node" data-work-tab="ducky">
+              <span class="acc-num">06</span>
+              <strong>Ducky AI</strong>
+              <em>RFx generation and Excel execution</em>
+            </button>
+            <article class="work-panel map" id="ducky" data-work-panel="ducky" hidden>
+          <p class="kicker">2024 · Duck Creek intern</p>
+          <h3>Ducky AI</h3>
+          <p class="lede">Governed RFx generation in Excel. A VBA harness calls the model, runs the returned code on the sheet, and writes the result back. That is how I drafted, acted on, and executed RFx work cheaper and faster. 90% faster creation.</p>
 
           <div class="diagram-shell">
-            <svg class="diagram" viewBox="0 0 1100 508" role="img" aria-labelledby="map-maps">
-              <title id="map-maps">Process map editor</title>
+            <svg class="diagram" viewBox="0 0 1100 508" role="img" aria-labelledby="map-ducky">
+              <title id="map-ducky">Ducky AI process map</title>
               <defs>
-                <marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+                <marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
                   <path d="M0 0 L10 5 L0 10 Z" fill="#1a365d" />
                 </marker>
               </defs>
               <rect class="band" x="12" y="24" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="52">Gather</text>
-              <g class="node is-on" data-step="reqs"><rect x="36" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="94" r="12" /><text class="num" x="58" y="98">1</text><text class="ttl" x="198" y="98">Requirements</text><text class="sub" x="198" y="122">scope the process</text></g>
-              <g class="node" data-step="bizdocs"><rect x="388" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="94" r="12" /><text class="num" x="410" y="98">2</text><text class="ttl" x="550" y="98">Business docs</text><text class="sub" x="550" y="122">existing write-ups</text></g>
-              <g class="node" data-step="draw"><rect x="740" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="94" r="12" /><text class="num" x="762" y="98">3</text><text class="ttl" x="902" y="98">Generate map</text><text class="sub" x="902" y="122">first diagram</text></g>
-              <path class="flow" marker-end="url(#am)" d="M360 114 H388" />
-              <path class="flow" marker-end="url(#am)" d="M712 114 H740" />
+              <text class="lane" x="32" y="52">Build</text>
+              <g class="node is-on" data-step="corpus"><rect x="36" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="94" r="12" /><text class="num" x="58" y="98">1</text><text class="ttl" x="198" y="98">Corpus</text><text class="sub" x="198" y="122">RFx data</text></g>
+              <g class="node" data-step="ask"><rect x="388" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="94" r="12" /><text class="num" x="410" y="98">2</text><text class="ttl" x="550" y="98">Ask</text><text class="sub" x="550" y="122">plain language</text></g>
+              <g class="node" data-step="draft"><rect x="740" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="94" r="12" /><text class="num" x="762" y="98">3</text><text class="ttl" x="902" y="98">Draft</text><text class="sub" x="902" y="122">GenAI material</text></g>
+              <path class="flow" marker-end="url(#ad)" d="M360 114 H388" />
+              <path class="flow" marker-end="url(#ad)" d="M712 114 H740" />
               <rect class="band" x="12" y="186" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="214">Edit</text>
-              <g class="node" data-step="select"><rect x="36" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="256" r="12" /><text class="num" x="58" y="260">4</text><text class="ttl" x="198" y="260">Select</text><text class="sub" x="198" y="284">click a node</text></g>
-              <g class="node" data-step="talk"><rect x="388" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="256" r="12" /><text class="num" x="410" y="260">5</text><text class="ttl" x="550" y="260">Talk or edit</text><text class="sub" x="550" y="284">change the step</text></g>
-              <g class="node" data-step="apply"><rect x="740" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="256" r="12" /><text class="num" x="762" y="260">6</text><text class="ttl" x="902" y="260">Apply</text><text class="sub" x="902" y="284">map updates itself</text></g>
-              <path class="flow" marker-end="url(#am)" d="M360 276 H388" />
-              <path class="flow" marker-end="url(#am)" d="M712 276 H740" />
+              <text class="lane" x="32" y="214">Execute</text>
+              <g class="node" data-step="harness"><rect x="36" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="256" r="12" /><text class="num" x="58" y="260">4</text><text class="ttl" x="198" y="260">Excel harness</text><text class="sub" x="198" y="284">VBA to the model</text></g>
+              <g class="node" data-step="runvba"><rect x="388" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="256" r="12" /><text class="num" x="410" y="260">5</text><text class="ttl" x="550" y="260">Run in sheet</text><text class="sub" x="550" y="284">execute returned code</text></g>
+              <g class="node" data-step="write"><rect x="740" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="256" r="12" /><text class="num" x="762" y="260">6</text><text class="ttl" x="902" y="260">Write results</text><text class="sub" x="902" y="284">action on RFx data</text></g>
+              <path class="flow" marker-end="url(#ad)" d="M360 276 H388" />
+              <path class="flow" marker-end="url(#ad)" d="M712 276 H740" />
               <rect class="band" x="12" y="348" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="376">Align</text>
-              <g class="node" data-step="sor"><rect x="36" y="396" width="500" height="84" rx="12" /><circle class="badge" cx="58" cy="418" r="12" /><text class="num" x="58" y="422">7</text><text class="ttl" x="286" y="422">Connect SOR</text><text class="sub" x="286" y="446">external system of record</text></g>
-              <g class="node" data-step="controls"><rect x="564" y="396" width="500" height="84" rx="12" /><circle class="badge" cx="586" cy="418" r="12" /><text class="num" x="586" y="422">8</text><text class="ttl" x="814" y="422">Align controls</text><text class="sub" x="814" y="446">map matches the live process</text></g>
-              <path class="flow" marker-end="url(#am)" d="M536 438 H564" />
+              <text class="lane" x="32" y="376">Ship</text>
+              <g class="node" data-step="edit"><rect x="36" y="396" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="418" r="12" /><text class="num" x="58" y="422">7</text><text class="ttl" x="198" y="422">Edit</text><text class="sub" x="198" y="446">human review</text></g>
+              <g class="node" data-step="cut"><rect x="388" y="396" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="418" r="12" /><text class="num" x="410" y="422">8</text><text class="ttl" x="550" y="422">Cheaper, faster</text><text class="sub" x="550" y="446">90% faster drafts</text></g>
+              <g class="node" data-step="sf"><rect x="740" y="396" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="418" r="12" /><text class="num" x="762" y="422">9</text><text class="ttl" x="902" y="422">Salesforce reports</text><text class="sub" x="902" y="446">83% less time, 200+ demos</text></g>
+              <path class="flow" marker-end="url(#ad)" d="M360 438 H388" />
+              <path class="flow" marker-end="url(#ad)" d="M712 438 H740" />
             </svg>
           </div>
-          <p class="step-card">Collect the requirements that name the process.</p>
+          <p class="step-card">Load the RFx set the team already has.</p>
 
           <div class="notes">
             <div>
               <h4>How it was built</h4>
-              <p>Requirements and existing business docs generate the first process map. You select a node, edit it, or describe the change in language. The diagram updates from that input.</p>
+              <p>Ducky AI ran in Excel. I put the RFx corpus behind a natural-language query. A VBA macro sent sheet context to an AI API, executed the returned code, and wrote results into the workbook. A person edited before the package left.</p>
             </div>
             <div>
               <h4>How it scaled</h4>
-              <p>The same map can connect to an external system of record so controls stay aligned with the live process.</p>
+              <p>Draft time dropped 90 percent. The same harness let the team act on RFx data in the sheet, cheaper and faster. Salesforce reporting on 200+ demos a month cut validation time 83 percent.</p>
             </div>
             <div>
               <h4>Key features</h4>
-              <p>Document intake, conversational node edit, automatic graph updates, and system-of-record control alignment.</p>
+              <p>Governed corpus query, VBA execution harness, in-sheet results on RFx data, human review gate, and Salesforce-backed validation.</p>
             </div>
           </div>
           <ol class="steps">
-            <li data-step="reqs" class="is-on">Collect the requirements that name the process.</li>
-            <li data-step="bizdocs">Pull in the write-ups the team already has.</li>
-            <li data-step="draw">Generate the first process map from that set.</li>
-            <li data-step="select">Click a node on the map.</li>
-            <li data-step="talk">Edit the step or describe the change in language.</li>
-            <li data-step="apply">The diagram updates from that change.</li>
-            <li data-step="sor">Connect an external system of record.</li>
-            <li data-step="controls">Align the map controls with the live process.</li>
+            <li data-step="corpus" class="is-on">Load the RFx set the team already has.</li>
+            <li data-step="ask">Ask for a section or an action in ordinary language.</li>
+            <li data-step="draft">The model writes the first pass.</li>
+            <li data-step="harness">VBA sends sheet context to the API.</li>
+            <li data-step="runvba">The macro runs the returned code in Excel.</li>
+            <li data-step="write">Results land in the workbook. That is the action on the RFx data.</li>
+            <li data-step="edit">A person edits before it leaves the building.</li>
+            <li data-step="cut">Creation time dropped 90 percent. Execution stayed in the sheet, cheaper and faster.</li>
+            <li data-step="sf">Salesforce reporting cut validation time 83 percent.</li>
           </ol>
         </article>
-
-        <article class="work-panel map" id="docs" data-work-panel="docs" hidden>
-          <p class="kicker">Built system</p>
-          <h3>Document processor</h3>
-          <p class="lede">Large-document intake reduced to a minimized reasoning set. That set drives a standard output document, human-in-the-loop review, a full-step audit log, and selective RAG for later agent work.</p>
-
-          <div class="diagram-shell">
-            <svg class="diagram" viewBox="0 0 1100 508" role="img" aria-labelledby="map-docs">
-              <title id="map-docs">Document processor</title>
-              <defs>
-                <marker id="adoc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-                  <path d="M0 0 L10 5 L0 10 Z" fill="#1a365d" />
-                </marker>
-              </defs>
-              <rect class="band" x="12" y="24" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="52">Intake</text>
-              <g class="node is-on" data-step="collect"><rect x="36" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="94" r="12" /><text class="num" x="58" y="98">1</text><text class="ttl" x="198" y="98">Collect</text><text class="sub" x="198" y="122">PDFs, sheets, files</text></g>
-              <g class="node" data-step="minimize"><rect x="388" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="94" r="12" /><text class="num" x="410" y="98">2</text><text class="ttl" x="550" y="98">Minimize</text><text class="sub" x="550" y="122">working set for reasoning</text></g>
-              <g class="node" data-step="semantic"><rect x="740" y="72" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="94" r="12" /><text class="num" x="762" y="98">3</text><text class="ttl" x="902" y="98">Semantic store</text><text class="sub" x="902" y="122">reason over the set</text></g>
-              <path class="flow" marker-end="url(#adoc)" d="M360 114 H388" />
-              <path class="flow" marker-end="url(#adoc)" d="M712 114 H740" />
-              <rect class="band" x="12" y="186" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="214">Generate</text>
-              <g class="node" data-step="reason"><rect x="36" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="58" cy="256" r="12" /><text class="num" x="58" y="260">4</text><text class="ttl" x="198" y="260">Reason</text><text class="sub" x="198" y="284">over the reduced set</text></g>
-              <g class="node" data-step="output"><rect x="388" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="410" cy="256" r="12" /><text class="num" x="410" y="260">5</text><text class="ttl" x="550" y="260">Standard output</text><text class="sub" x="550" y="284">generated document</text></g>
-              <g class="node" data-step="hil"><rect x="740" y="234" width="324" height="84" rx="12" /><circle class="badge" cx="762" cy="256" r="12" /><text class="num" x="762" y="260">6</text><text class="ttl" x="902" y="260">HIL review</text><text class="sub" x="902" y="284">approve before ship</text></g>
-              <path class="flow" marker-end="url(#adoc)" d="M360 276 H388" />
-              <path class="flow" marker-end="url(#adoc)" d="M712 276 H740" />
-              <rect class="band" x="12" y="348" width="1076" height="148" rx="14" />
-              <text class="lane" x="32" y="376">Govern</text>
-              <g class="node" data-step="audit"><rect x="36" y="396" width="500" height="84" rx="12" /><circle class="badge" cx="58" cy="418" r="12" /><text class="num" x="58" y="422">7</text><text class="ttl" x="286" y="422">Audit log</text><text class="sub" x="286" y="446">intake and creation, every step</text></g>
-              <g class="node" data-step="rag"><rect x="564" y="396" width="500" height="84" rx="12" /><circle class="badge" cx="586" cy="418" r="12" /><text class="num" x="586" y="422">8</text><text class="ttl" x="814" y="422">Selective RAG</text><text class="sub" x="814" y="446">agent handoff</text></g>
-              <path class="flow" marker-end="url(#adoc)" d="M536 438 H564" />
-            </svg>
           </div>
-          <p class="step-card">Bring in the PDFs, spreadsheets, and other source files.</p>
-
-          <div class="notes">
-            <div>
-              <h4>How it was built</h4>
-              <p>Intake reduces large PDFs and spreadsheets to a smaller working set so the model can reason over them. That set drives a standard output document. A person reviews it before it ships.</p>
-            </div>
-            <div>
-              <h4>How it scaled</h4>
-              <p>Every intake and generation step writes an audit log. The same store can be used as selective RAG when an agent needs the data later.</p>
-            </div>
-            <div>
-              <h4>Key features</h4>
-              <p>Document intake, minimized reasoning set, standard generation, human approval, full-step audit, and selective RAG handoff.</p>
-            </div>
           </div>
-          <ol class="steps">
-            <li data-step="collect" class="is-on">Bring in the PDFs, spreadsheets, and other source files.</li>
-            <li data-step="minimize">Cut them down to a working set the model can reason over.</li>
-            <li data-step="semantic">Store that set so later steps use the same facts.</li>
-            <li data-step="reason">Reason over the reduced set.</li>
-            <li data-step="output">Generate a standard output document.</li>
-            <li data-step="hil">A person reviews and approves before it ships.</li>
-            <li data-step="audit">Log intake and creation at every step.</li>
-            <li data-step="rag">Use the store as selective RAG when an agent needs the data.</li>
-          </ol>
-        </article>
+        </div>
+
+
+
+
+
+
+
       </section>
 
       <section id="approach" class="wrap">

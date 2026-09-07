@@ -26,36 +26,54 @@ function wireMap(root) {
 function wireWork() {
   const tabs = [...document.querySelectorAll("[data-work-tab]")];
   const panels = [...document.querySelectorAll("[data-work-panel]")];
+  const items = [...document.querySelectorAll("[data-work-item]")];
   if (!tabs.length) return;
 
   const ids = new Set(panels.map((panel) => panel.dataset.workPanel));
+  const aliases = { excel: "ducky" };
+  let openId = "";
 
-  const show = (id) => {
-    if (!ids.has(id)) return;
+  const resolve = (id) => {
+    if (ids.has(id)) return id;
+    const aliased = aliases[id];
+    return aliased && ids.has(aliased) ? aliased : "";
+  };
+
+  const show = (id, scroll) => {
+    const next = resolve(id);
+    openId = next;
     tabs.forEach((tab) => {
-      const on = tab.dataset.workTab === id;
+      const on = tab.dataset.workTab === next;
       tab.classList.toggle("is-on", on);
       tab.setAttribute("aria-selected", on ? "true" : "false");
+      tab.setAttribute("aria-expanded", on ? "true" : "false");
     });
     panels.forEach((panel) => {
-      panel.hidden = panel.dataset.workPanel !== id;
+      panel.hidden = panel.dataset.workPanel !== next;
     });
-    if (location.hash !== `#${id}`) {
-      history.replaceState(null, "", `#${id}`);
+    items.forEach((item) => {
+      item.classList.toggle("is-open", item.dataset.workItem === next);
+    });
+    const nextHash = next ? `#${next}` : "";
+    if (location.hash !== nextHash) {
+      history.replaceState(null, "", nextHash || location.pathname);
+    }
+    if (scroll && next) {
+      const item = items.find((entry) => entry.dataset.workItem === next);
+      item?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   tabs.forEach((tab) => {
-    tab.addEventListener("click", () => show(tab.dataset.workTab));
+    tab.addEventListener("click", () => {
+      const id = tab.dataset.workTab;
+      show(openId === id ? "" : id, true);
+    });
   });
 
   const fromHash = () => {
     const id = location.hash.slice(1);
-    if (id && ids.has(id)) {
-      show(id);
-      return;
-    }
-    show("studio");
+    show(resolve(id), false);
   };
 
   window.addEventListener("hashchange", fromHash);

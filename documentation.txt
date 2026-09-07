@@ -167,3 +167,44 @@ workflow. Banned hype words stayed out. Numbers unchanged.
 
 Pushed f3aee55 to origin/main as amoghd3. Pages should redeploy at
 https://amoghd3.github.io/portfolio/
+
+Moved workspace — 2026-09-07
+
+Copied the repo from C:\Users\Blese\portfolio to
+C:\Users\Blese\OneDrive\Desktop\development\portfolio.
+
+development already had other projects and its own .git, so the site
+stays in a portfolio subfolder with its own remote
+(https://github.com/amoghd3/portfolio.git). Cursor workspace should
+point at the new path. The old C:\Users\Blese\portfolio folder can be
+deleted once Cursor releases the lock.
+
+Local preview — 2026-09-07
+
+Port 4173 had leftover Python servers that returned empty replies.
+Killed those PIDs and started python -m http.server 5500 --bind 127.0.0.1
+from the new portfolio folder. Home page returns 200 at
+http://127.0.0.1:5500/ (title: Amogh Donthi, AI Product Strategist).
+
+Work accordion — 2026-09-07
+
+Work nodes on index.html and work.html now expand in place. Click a
+node to open that project's map, step callout, and How it was built /
+scaled / features. Click another node and the first panel closes.
+Click the open node again to collapse it. No panel is open on load
+unless the URL hash names a project (index.html#ducky, work.html#orbit).
+app.js no longer defaults to Prompt Studio.
+
+Ducky + Excel harness merged — 2026-09-07
+
+Removed the separate Excel AI harness node. Ducky AI is one system:
+RFx generation that runs in Excel through a VBA harness. The map now
+has Build (corpus, ask, draft), Execute (harness, run in sheet, write
+results), and Ship (edit, cheaper/faster, Salesforce). Copy states the
+harness is how RFx work was drafted, acted on, and executed cheaper
+and faster. 90% and 83% numbers unchanged. #excel still opens Ducky.
+
+Push — 2026-09-07
+
+Committing the Work accordion, Ducky/Excel merge, and human-writing
+rule, then pushing main to origin.
