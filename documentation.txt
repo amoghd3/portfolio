@@ -1,0 +1,32 @@
+Portfolio setup — 2026-09-07
+
+Cloned https://github.com/amoghd3/portfolio.git into C:\Users\Blese\portfolio.
+The remote started with an empty repo plus a Next.js GitHub Pages workflow.
+
+Next.js path was abandoned. create-next-app / npm / pnpm installs hung on this
+machine (slow registry, timeouts on optional Linux SWC binaries). The user asked
+to ship something usable on GitHub Pages instead.
+
+Switched to a static site with no build step:
+- index.html — single-page portfolio for Amogh Donthi
+- styles.css — dark editorial layout (Instrument Serif + DM Sans)
+- .github/workflows/pages.yml — copies those two files into _site, uploads the
+  artifact, deploys with actions/deploy-pages
+- .nojekyll — keeps Pages from running Jekyll
+
+Removed the Next.js scaffold (package.json, next.config.ts, src/, public/,
+nextjs.yml) so Pages does not try to compile anything.
+
+Live URL after pushing main and enabling Pages (GitHub Actions source):
+https://amoghd3.github.io/portfolio/
+
+Copy is based on public LinkedIn/GitHub details: Wells Fargo AI transformation,
+Duck Creek intern, 10xLabs, Muse Research, UIUC CS + Advertising.
+
+To update the page, edit index.html / styles.css and push to main.
+
+Added scroll-margin-top on sections so in-page nav clears the sticky header.
+Verified locally at http://127.0.0.1:4173/: hero, About/Experience/Work/Contact
+anchors, LinkedIn/GitHub hrefs, and styles.css loading.
+
+Pushing this static site to origin/main so GitHub Pages can deploy it.
